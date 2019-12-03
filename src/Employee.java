@@ -75,7 +75,7 @@ public class Employee {
     * 
     * Interface:
     * 
-    * @return      Id
+    * @return      Id: int, employee's ID
     * ****************************************/    
     public int getId(){
         return this.Id;
@@ -86,7 +86,7 @@ public class Employee {
     * 
     * Interface:
     * 
-    * @return      wage
+    * @return      wage: double, hourly wage
     * ****************************************/    
     public double getWage(){
         return this.wage;
@@ -97,7 +97,7 @@ public class Employee {
     * 
     * Interface:
     * 
-    * @return      hours
+    * @return      hours: int, number of hours worked
     * ****************************************/    
     public int getHours(){
         return this.hours;
@@ -108,7 +108,7 @@ public class Employee {
     * 
     * Interface:
     * 
-    * @return      grossPay
+    * @return      grossPay: double, total pay
     * ****************************************/    
     public double getGrossPay(){
         
@@ -122,7 +122,7 @@ public class Employee {
     * 
     * Interface:
     * 
-    * @return      regPay
+    * @return      regPay: double, regular pay
     * ****************************************/    
     public double getRegPay(){
         
@@ -140,7 +140,7 @@ public class Employee {
     * 
     * Interface:
     * 
-    * @return      regPay
+    * @return      overPay: double, over pay
     * ****************************************/    
     public double getOverPay(){
         
@@ -153,6 +153,28 @@ public class Employee {
         
         return overPay;
     }
+    
+    /*****************************************
+    * Description: the purpose of this override method is to print circle details
+    * 
+    * Interface:
+    * 
+    * @return       s: String, employee info
+    * ****************************************/
+        
+        public String toString(){
+            String s = "";
+            
+            s = String.format("%-10s %10.5f %s", "Employee ID: ", this.Id, "\n");
+            s += String.format("%-10s %10.5f %s", "Wage: ", this.wage, "\n");
+            s += String.format("%-10s %10.5f %s", "Hours worked: ", this.hours, "\n");
+            s += String.format("%-10s %10.5f %s", "Regular Pay: ", this.getRegPay(), "\n");
+            s += String.format("%-10s %10.5f %s", "Over Pay: ", this.getOverPay(), "\n");
+            s += String.format("%-10s %10.5f %s", "Gross Pay: ", this.getGrossPay(), "\n");
+            
+            return s;
+        } // end toString overloader
+        
     //*** Setters ***
 
     /*****************************************
@@ -176,4 +198,5 @@ public class Employee {
     public void setHours(int newhours){
         this.hours = newhours;
     } // end setHours
+    
 } // end of public class
