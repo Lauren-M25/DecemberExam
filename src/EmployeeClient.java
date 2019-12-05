@@ -28,16 +28,15 @@ public class EmployeeClient {  // begin class
 
         String prompt;				// prompt for use in input dialogs
 
-        String delim = "[ :]+";		// delimiter string for splitting input string
-        String[] tokens;            // string array for gathering input
+        String delim = "[ :]+";		        // delimiter string for splitting input string
+        String[] tokens;                        // string array for gathering input
         
-        String nl = System.lineSeparator();
-        // new line character for file writing
+        String nl = System.lineSeparator();     // new line character for file writing
     	
     // ***** create objects *******
     
-        Employee[] employees = new Employee [100];
-        Employee amy = new Employee();
+        Employee[] employees = new Employee [100];   // array of employees
+        Employee amy = new Employee();     // amy the employee
         
         // file IO buffers, for reading data form a text file and writing output to a text file  
         BufferedReader fin = new BufferedReader(new FileReader("employeeDecemberExamData.txt"));
@@ -48,36 +47,35 @@ public class EmployeeClient {  // begin class
         System.out.println("*******************************************");
         System.out.println("Name: Lauren");
         System.out.println("Class: CS30S");
-        System.out.println("Assignment:	Ax Qy");
+        System.out.println("Assignment:	December Exam");
         System.out.println("*******************************************");
 
         bannerOut = "*******************************************" + nl;
         bannerOut += "Name: Lauren" + nl;
         bannerOut += "Class: CS30S" + nl;
-        bannerOut += "Assignment: Ax Qy" + nl;
+        bannerOut += "Assignment: December Exam" + nl;
         bannerOut += "*******************************************" + nl + nl;
         
         fout.print(bannerOut);		// prints the banner to the output text file
     	
     // ************************ get input **********************
 
-        strin = fin.readLine();
-        int i = 0;
-        tokens = strin.split(delim);
+        strin = fin.readLine();  // get input
+        int i = 0;  // declare index variable
         
         while(strin != null){
-            tokens = strin.split(delim);
+            tokens = strin.split(delim); // declare tokens
             int hours = Integer.parseInt(tokens[0]); // parse hours
             double wage = Double.parseDouble(tokens[1]); // parse wage
-            employees[i] = new Employee(wage, hours);
-            i++;
-            strin = fin.readLine();
-        }
+            employees[i] = new Employee(wage, hours); // load employee into record array
+            i++; // update index variable
+            strin = fin.readLine(); // loop update statement
+        } // end load employee records
 
     // ************************ processing ***************************
         
-        amy.setWage(30.00);
-        amy.setHours(47);
+        amy.setWage(30.00); // set amy's wage
+        amy.setHours(47); // set amy's hours
 
     // ************************ print output ****************************
     
