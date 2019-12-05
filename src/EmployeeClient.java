@@ -37,6 +37,7 @@ public class EmployeeClient {  // begin class
     // ***** create objects *******
     
         Employee[] employees = new Employee [100];
+        Employee amy = new Employee();
         
         // file IO buffers, for reading data form a text file and writing output to a text file  
         BufferedReader fin = new BufferedReader(new FileReader("employeeDecemberExamData.txt"));
@@ -75,13 +76,17 @@ public class EmployeeClient {  // begin class
 
     // ************************ processing ***************************
         
-
+        amy.setWage(30.00);
+        amy.setHours(47);
 
     // ************************ print output ****************************
     
         for(int j = 0; j < i; j++){
         System.out.println(employees[j].toString());
         } // end print employee records
+        
+        amy.toString(); // print amy's records
+        
     // ******** closing message *********
         
         System.out.println("end of processing :)");
@@ -89,9 +94,9 @@ public class EmployeeClient {  // begin class
         
     // ***** close streams *****
         
-        fin.close();      // close input buffer stream
+        fin.close();        // close input buffer stream
         fout.close();       // close output stream, note that nothing is printed 
-        					// to the output file until the stream is closed		
+                            // to the output file until the stream is closed		
         
     }  // end main
 }  // end class
