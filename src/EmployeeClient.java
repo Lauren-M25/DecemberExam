@@ -39,7 +39,7 @@ public class EmployeeClient {  // begin class
         Employee[] employees = new Employee [100];
         
         // file IO buffers, for reading data form a text file and writing output to a text file  
-        BufferedReader fin = new BufferedReader(new FileReader("demo1Data.txt"));
+        BufferedReader fin = new BufferedReader(new FileReader("employeeDecemberExamData.txt"));
         PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("outFile.txt")));
     	
     // ********** Print output Banner **********
@@ -65,6 +65,7 @@ public class EmployeeClient {  // begin class
         tokens = strin.split(delim);
         
         while(strin != null){
+            tokens = strin.split(delim);
             int hours = Integer.parseInt(tokens[0]); // parse hours
             double wage = Double.parseDouble(tokens[1]); // parse wage
             employees[i] = new Employee(wage, hours);
@@ -78,7 +79,9 @@ public class EmployeeClient {  // begin class
 
     // ************************ print output ****************************
     
-    
+        for(int j = 0; j < i; j++){
+        System.out.println(employees[j].toString());
+        } // end print employee records
     // ******** closing message *********
         
         System.out.println("end of processing :)");
@@ -86,7 +89,7 @@ public class EmployeeClient {  // begin class
         
     // ***** close streams *****
         
-        //fin.close();      // close input buffer stream
+        fin.close();      // close input buffer stream
         fout.close();       // close output stream, note that nothing is printed 
         					// to the output file until the stream is closed		
         
